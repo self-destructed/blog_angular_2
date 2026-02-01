@@ -1,9 +1,9 @@
 // @ts-check
-const eslint = require('@eslint/js');
-const { defineConfig } = require('eslint/config');
-const tseslint = require('typescript-eslint');
-const angular = require('angular-eslint');
-const eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommended');
+const eslint = require('@eslint/js')
+const { defineConfig } = require('eslint/config')
+const tseslint = require('typescript-eslint')
+const angular = require('angular-eslint')
+const eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommended')
 
 module.exports = defineConfig([
   {
@@ -12,7 +12,7 @@ module.exports = defineConfig([
       eslint.configs.recommended,
       tseslint.configs.recommended,
       tseslint.configs.stylistic,
-      angular.configs.tsRecommended,
+      angular.configs.tsRecommended
     ],
     processor: angular.processInlineTemplates,
     rules: {
@@ -21,23 +21,26 @@ module.exports = defineConfig([
         {
           type: 'attribute',
           prefix: 'app',
-          style: 'camelCase',
-        },
+          style: 'camelCase'
+        }
       ],
       '@angular-eslint/component-selector': [
         'error',
         {
           type: 'element',
           prefix: 'app',
-          style: 'kebab-case',
-        },
-      ],
-    },
+          style: 'kebab-case'
+        }
+      ]
+    }
   },
   {
     files: ['**/*.html'],
-    extends: [angular.configs.templateRecommended, angular.configs.templateAccessibility],
-    rules: {},
+    extends: [
+      angular.configs.templateRecommended,
+      angular.configs.templateAccessibility
+    ],
+    rules: {}
   },
-  eslintPluginPrettierRecommended,
-]);
+  eslintPluginPrettierRecommended
+])
