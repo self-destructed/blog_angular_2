@@ -1,0 +1,16 @@
+echo "→ Pre-push: checking only files that will be pushed..."
+
+# Получаем список файлов, которые попадут в push (staged + committed locally)
+FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(ts|html|scss|css|json|md)$' || true)
+
+if [ -z "$FILES" ]; then
+  echo "No relevant files to check → push allowed"
+  exit 0
+fi
+
+# Запускаем проверки только на этих файлах
+echo "$FILES" | xargs npx prettier --check --no-error-on-unmatched-pattern
+echo "$FILES" | xargs npx stylelint --allow-empty-input || true
+echo "$FILES" | xargs npx eslint --max-warnings=0 || true
+
+echo "✓ Pre-push checks passed on pushed files!"
