@@ -17,7 +17,8 @@
     "check": "npm run format:check ; npm run lint:styles ; npm run lint ; exit 0",
     "check:strict": "npm run format:check && npm run lint:styles && npm run lint",
     "fix": "npm run format && npm run lint:styles:fix && npm run lint:fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "deploy": "ng deploy --base-href=/blog_angular_2/"
   },
   "private": true,
   "packageManager": "npm@11.7.0",
@@ -38,6 +39,7 @@
     "@commitlint/cli": "^20.4.0",
     "@commitlint/config-conventional": "^20.4.0",
     "@tailwindcss/postcss": "^4.1.12",
+    "angular-cli-ghpages": "^3.0.2",
     "angular-eslint": "21.2.0",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
