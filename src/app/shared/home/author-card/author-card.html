@@ -1,0 +1,23 @@
+<article class="flex items-start gap-6">
+  <div class="left-panel">
+    <div
+      class="inline-flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-zinc-300 text-xl font-bold text-gray-700">
+      @if (author().avatarUrl) {
+        <img class="object-contain" [src]="author().avatarUrl" alt="" />
+      } @else {
+        {{ author().name.charAt(0) }}{{ author().surname.charAt(0) }}
+      }
+    </div>
+  </div>
+  <div class="right-panel flex flex-col gap-2">
+    <h3>{{ fullName() }}</h3>
+    <p class="mt-1 text-sm text-gray-600">
+      {{ author().roles.join(', ') }}
+    </p>
+    <ul class="flex gap-1">
+      @for (social of author().socials; track social) {
+        <li><a target="_blank" [href]="social">🔗</a></li>
+      }
+    </ul>
+  </div>
+</article>
