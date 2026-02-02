@@ -1,0 +1,11 @@
+{
+  "src/**/*.{ts,html}": [
+    "prettier --no-error-on-unmatched-pattern --write",
+    "npx eslint --fix"
+  ],
+  "src/**/*.{css,scss}": [
+    "prettier --no-error-on-unmatched-pattern --write",
+    "npx stylelint --allow-empty-input --fix"
+  ],
+  "**/*.{json,md}": "prettier --no-error-on-unmatched-pattern --write"
+}
