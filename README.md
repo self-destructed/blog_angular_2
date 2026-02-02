@@ -1,59 +1,80 @@
 # BlogAngular2
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
+## Структура приложения
 
-## Development server
-
-To start a local development server, run:
-
-```bash
-ng serve
+```sh
+src/
+├── app/
+│   ├── core/
+│   │   ├── services/         # Глобальные сервисы
+│   │   ├── guards/           # Guards маршрутизации
+│   │   ├── pipes/            # Глобальные pipes
+│   │   ├── constants/        # Константы
+│   │   └── types/            # Типы, интерфейсы
+│   ├── shared/             # Общие компоненты/директивы
+│   ├── pages/              # Компоненты страниц (маршруты)
+│   ├── app.component.ts    # Главный компонент
+│   └── app.routes.ts # Маршрутизация
+├── ui/                   # UI‑компоненты (кнопки, формы)
+├── assets/               # Статика
+│   ├── img/              # Изображения
+│   ├── fonts/            # Шрифты
+│   └── localization/     # Локализация (json‑файлы)
+├── index.html            # Главная страница
+├── main.ts               # Точка входа
+└── styles.scss           # Глобальные стили (SCSS)
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### В приложении рекомендуется придерживаться
 
-## Code scaffolding
+- Строгой типизации. Избегать any, избегать нетипизированных переменных и методов. Если интерфейса не хватает, создаем в `app/core/types`
+- Осмысленного нейминга.
+  - `boolean` всегда должен звучать, как вопрос. Например: isModalOpen
+  - `Методы` указывать на действие. Например: initForm()
+  - Главное: лучше длиннее, но понятнее, чем короче, но неочевидно (checkIfAllModalsClosed >>> check)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Соглашение о коммитах
 
-```bash
-ng generate component component-name
-```
+Рекомендуется придерживаться conventional commits. Формат: `суть: действие`
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- `feat`: добавление нового функционала
+- `fix`: исправление ошибок
+- `docs`: изменения в документации
+  По коммиту должно быть очевидно понятно, что в нем происходило. Глаголы пишутся в инфинитиве.
+  Например, `feat: add blog.component with data handle & set types`
 
-```bash
-ng generate --help
-```
+## Работа с ветками
 
-## Building
+Под каждую новую задачу нужно ответвляться от основой ветки. Названия веток соответствуют типу задачи и номеру задачи. Номера задач берутся из таблицы <https://app.asana.com/1/1213040084361017/project/1212987155482072/board>
 
-To build the project run:
+- `feature/` добавление нового функционала
+- `fix/` исправление ошибок
+  Например, `feature/123`
 
-```bash
-ng build
-```
+## Создание элементов
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Для создания элементов приложения рекомендуется из родительской директивы использовать команды angular cli
 
-## Running unit tests
+- `ng g c <name>` - создает компонент
+- `ng g s <name>` - создает сервис
+- `ng g pipe <name>` - создает пайп
+- `ng g interface <name>` - создает интерфейс
+- `ng g guard <name>` - создает guard
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Запуск проекта
 
-```bash
-ng test
-```
+`ng serve` - `откроется на http://localhost:4200/`
 
-## Running end-to-end tests
+## Деплой проекта
 
-For end-to-end (e2e) testing, run:
+`npm run deploy` - деплой находится по адресу <https://self-destructed.github.io/blog_angular_2/>
 
-```bash
-ng e2e
-```
+## Роутинг
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Все пути проекта определяются в `app.routes.ts` с использованием ленивой загрузки
 
-## Additional Resources
+## Дизайн
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Используется бесплатный макет: <https://www.figma.com/design/KGSC7ciRpHYjdw2CUlxFSz/Notebook---Minimal-Blog-Template--Free---Community->
+<https://www.figma.com/community/file/1118119058492366983/notebook-minimal-blog-template-free>
+Автора: <https://www.figma.com/@themefisher>
