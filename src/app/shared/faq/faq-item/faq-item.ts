@@ -1,4 +1,4 @@
-import { Component, input, model } from '@angular/core'
+import { Component, input, model as signal } from '@angular/core'
 import { FaqItem } from '../../../core/types/faq-item.type'
 
 @Component({
@@ -8,9 +8,9 @@ import { FaqItem } from '../../../core/types/faq-item.type'
 })
 export class FaqItemComponent {
   public readonly faqItem = input.required<FaqItem>()
-  public expanded = model<boolean>(false)
+  public isExpanded = signal<boolean>(false)
 
   public toggle() {
-    this.expanded.update((v) => !v)
+    this.isExpanded.update((v) => !v)
   }
 }

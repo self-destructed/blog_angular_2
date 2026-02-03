@@ -1,5 +1,5 @@
 <div class="rounded-lg bg-black-squeeze">
-  <h3 class="rounded-lg py-2 ps-2 pe-6" [class.bg-aqua-squeeze]="expanded()">
+  <h3 class="rounded-lg py-2 ps-2 pe-6" [class.bg-aqua-squeeze]="isExpanded()">
     <button
       type="button"
       class="font-noto-sans flex w-full content-start justify-between gap-x-4 py-2 ps-2 pe-2 text-base leading-6 font-medium tracking-normal text-shark capitalize"
@@ -8,11 +8,11 @@
         {{ faqItem().question }}
       </span>
       <span class="text-3xl leading-5 text-persian-green">{{
-        expanded() ? '&minus;' : '&plus;'
+        isExpanded() ? '&minus;' : '&plus;'
       }}</span>
     </button>
   </h3>
-  @if (this.expanded()) {
+  @if (this.isExpanded()) {
     <div>
       <p
         class="font-noto-sans px-5 py-4 text-sm leading-relaxed font-normal tracking-normal text-storm-dust">
