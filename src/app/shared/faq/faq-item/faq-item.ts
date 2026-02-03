@@ -10,14 +10,6 @@ export class FaqItemComponent {
   public readonly faqItem = input.required<FaqItem>()
   public expanded = model<boolean>(false)
 
-  public open() {
-    this.expanded.set(true)
-  }
-
-  public close() {
-    this.expanded.set(false)
-  }
-
   public toggle() {
     this.expanded.update((v) => !v)
   }
