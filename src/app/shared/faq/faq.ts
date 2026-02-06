@@ -3,11 +3,11 @@ import { FaqItem } from '../../core/types/faq-item.type'
 import { FaqItemComponent } from './faq-item/faq-item'
 
 @Component({
-  selector: 'app-faq',
+  selector: 'app-faq-list',
   imports: [FaqItemComponent],
   templateUrl: './faq.html',
   styles: ``
 })
-export class FaqComponent {
+export class FaqListComponent {
   public readonly items = input.required<FaqItem[]>()
 }
