@@ -8,6 +8,6 @@ import { FaqItemComponent } from './faq-item/faq-item'
   templateUrl: './faq.html',
   styles: ``
 })
-export class Faq {
+export class FaqComponent {
   public readonly items = input.required<FaqItem[]>()
 }

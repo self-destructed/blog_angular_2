@@ -1,13 +1,14 @@
 import { Component } from '@angular/core'
 import { FaqItem } from '../../core/types/faq-item.type'
+import { FaqComponent } from '../../shared/faq/faq'
 
 @Component({
   selector: 'app-faq',
-  imports: [],
+  imports: [FaqComponent],
   templateUrl: './faq.html',
   styles: ``
 })
-export class Faq {
+export class FaqPageComponent {
   public readonly faqMockData: FaqItem[] = [
     {
       question: 'is there have any option for write blog?',

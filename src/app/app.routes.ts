@@ -8,7 +8,8 @@ export const routes: Routes = [
   },
   {
     path: 'faq',
-    loadComponent: () => import('./pages/faq/faq').then((m) => m.Faq),
+    loadComponent: () =>
+      import('./pages/faq/faq').then((m) => m.FaqPageComponent),
     title: 'FAQ'
   },
   {
