@@ -1,10 +1,11 @@
 import { Component } from '@angular/core'
 import { FaqItem } from '../../core/types/faq-item.type'
-import { FaqComponent } from '../../shared/faq/faq'
+import { FaqListComponent } from '../../shared/faq/faq'
+import { RouterLink } from '@angular/router'
 
 @Component({
   selector: 'app-faq',
-  imports: [FaqComponent],
+  imports: [FaqListComponent, RouterLink],
   templateUrl: './faq.html',
   styles: ``
 })
