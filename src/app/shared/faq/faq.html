@@ -1,0 +1,7 @@
+<ul class="flex flex-col gap-4">
+  @for (item of items(); track item.question) {
+    <li>
+      <app-faq-item [faqItem]="item"></app-faq-item>
+    </li>
+  }
+</ul>
