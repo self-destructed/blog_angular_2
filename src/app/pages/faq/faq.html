@@ -1,0 +1,24 @@
+<section class="px-4 pt-20 pb-25">
+  <div class="mx-auto max-w-187">
+    <h1
+      class="font-noto-sans mb-4 text-center text-3xl leading-8 font-semibold tracking-normal capitalize">
+      <span class="bg-persian-green text-white">Frequently</span> asked question
+    </h1>
+    <p
+      class="font-noto-sans mb-10 text-center text-base leading-6 font-normal tracking-normal text-storm-dust">
+      Did you come here for something in particular or just general
+      Riker-bashing? And blowing
+    </p>
+    <!-- TODO set mb-20 at faq-list -->
+    <app-faq-list [items]="faqMockData"></app-faq-list>
+    <h3
+      class="font-noto-sans mt-20 mb-8 text-center text-xl leading-6 font-semibold tracking-normal capitalize">
+      Can't find an answer to your question?
+    </h3>
+    <a
+      routerLink="/contact"
+      class="font-noto-sans mx-auto block w-fit rounded-md border-1 px-7 py-4 text-center text-base leading-none font-normal tracking-normal text-persian-green"
+      >Contact us 🡪
+    </a>
+  </div>
+</section>
