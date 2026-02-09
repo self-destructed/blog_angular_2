@@ -9,4 +9,17 @@
   --color-black-squeeze: hsl(170deg 30% 96% / 100%);
   --color-shark: hsl(0deg 0% 13% / 100%);
   --color-storm-dust: hsl(0deg 0% 40% / 100%);
+  --text-h-font-weight-default: 600;
+  --text-h-line-height-default: 1.4;
+  --text-h-spacing-default: 0rem;
+  --text-h1: 1.6875rem;
+  --text-h2: 1.5rem;
+  --text-h3: 1.3125rem;
+  --text-h4: 1.1875rem;
+  --text-h5: 1.1062rem;
+  --text-h5-font-weight: 500;
+  --text-h5-line-height-default: 1.5;
+  --text-h6: 0.9375rem;
+  --text-h6-font-weight: 500;
+  --text-h6-line-height-default: 1.5;
 }
