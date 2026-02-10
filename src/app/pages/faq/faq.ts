@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { FaqItem } from '../../core/types/faq-item.type'
-import { FaqListComponent } from '../../shared/faq/faq'
+import { FaqListComponent } from '../../shared/faq/faq-list/faq-list'
 import { RouterLink } from '@angular/router'
 
 @Component({
