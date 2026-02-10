@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router'
 @Component({
   selector: 'app-faq',
   imports: [FaqListComponent, RouterLink],
-  templateUrl: './faq.html',
+  templateUrl: './faq-page.html',
   styles: ``
 })
 export class FaqPageComponent {
