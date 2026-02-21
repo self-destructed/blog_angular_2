@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
-
+@import 'tailwindcss-primeui';
 /* stylelint-disable-next-line scss/at-rule-no-unknown */
 @theme {
   --color-persian-green: hsl(177deg 100% 33% / 100%);
