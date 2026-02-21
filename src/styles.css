@@ -7,7 +7,7 @@
   --color-persian-green: hsl(177deg 100% 33% / 100%);
   --color-aqua-squeeze: hsl(177deg 39% 91% / 100%);
   --color-black-squeeze: hsl(170deg 30% 96% / 100%);
-  --color-mine-shaft: background: hsl(0deg 0% 20% / 100%);
+  --color-mine-shaft: hsl(0deg 0% 20% / 100%);
   --color-shark: hsl(0deg 0% 13% / 100%);
   --color-storm-dust: hsl(0deg 0% 40% / 100%);
   --text-h-font-weight-default: 600;
