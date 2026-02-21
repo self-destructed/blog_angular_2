@@ -8,6 +8,10 @@ export const routes: Routes = [
     title: 'Home'
   },
   {
+    path: 'home_1',
+    redirectTo: ''
+  },
+  {
     path: 'faq',
     loadComponent: () =>
       import('./pages/faq-page/faq-page').then((m) => m.FaqPageComponent),
