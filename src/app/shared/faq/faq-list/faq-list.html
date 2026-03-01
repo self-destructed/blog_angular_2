@@ -5,3 +5,7 @@
     </li>
   }
 </ul>
+
+<p-accordion [multiple]="true">
+  @for (item of items(); track item.question) {}
+</p-accordion>
