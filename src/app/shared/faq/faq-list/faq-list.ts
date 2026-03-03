@@ -1,11 +1,15 @@
 import { Component, input } from '@angular/core'
 import { FaqItem } from '../../../core/types/faq-item.type'
-import { FaqItemComponent } from '../faq-item/faq-item'
-import { Accordion } from 'primeng/accordion'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionHeader,
+  AccordionPanel
+} from 'primeng/accordion'
 
 @Component({
   selector: 'app-faq-list',
-  imports: [FaqItemComponent, Accordion],
+  imports: [Accordion, AccordionPanel, AccordionHeader, AccordionContent],
   templateUrl: './faq-list.html',
   styles: ``
 })
