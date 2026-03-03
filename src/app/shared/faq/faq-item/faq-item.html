@@ -1,23 +1,40 @@
-<div class="rounded-lg bg-black-squeeze">
-  <h3 class="rounded-lg py-2 ps-2 pe-6" [class.bg-aqua-squeeze]="isExpanded()">
-    <button
-      type="button"
-      class="font-noto-sans flex w-full content-start justify-between gap-x-4 py-2 ps-2 pe-2 text-base leading-6 font-medium tracking-normal text-shark capitalize"
-      (click)="toggle()">
-      <span class="text-left text-shark">
-        {{ faqItem().question }}
-      </span>
+<p-accordion-panel
+  [value]="id()"
+  [pt]="{
+    root: { class: '!rounded-lg !bg-primary-50 !border-0' }
+  }">
+  <p-accordion-header
+    [pt]="{
+      root: {
+        class:
+          '!rounded-lg !py-4 !ps-4 !pe-8 !bg-primary-50 data-[p-active=true]:!bg-primary-100'
+      }
+    }">
+    <h3
+      class="font-noto-sans text-left text-base leading-6 font-medium tracking-normal text-shark capitalize">
+      {{ faqItem().question }}
+    </h3>
+    <ng-template #toggleicon let-active="active">
       <span class="text-3xl leading-5 text-persian-green">{{
-        isExpanded() ? '&minus;' : '&plus;'
+        active ? '&minus;' : '&plus;'
       }}</span>
-    </button>
-  </h3>
-  @if (isExpanded()) {
-    <div>
-      <p
-        class="font-noto-sans px-5 py-4 text-sm leading-relaxed font-normal tracking-normal text-storm-dust">
-        {{ faqItem().answer }}
-      </p>
-    </div>
-  }
-</div>
+    </ng-template>
+  </p-accordion-header>
+  <p-accordion-content
+    [pt]="{
+      root: {
+        class: '!bg-primary-50'
+      },
+      content: {
+        class: '!bg-inherit !px-5 !py-4'
+      },
+      contentWrapper: {
+        class: '!bg-inherit'
+      }
+    }">
+    <p
+      class="font-noto-sans text-sm leading-relaxed font-normal tracking-normal text-storm-dust">
+      {{ faqItem().answer }}
+    </p>
+  </p-accordion-content></p-accordion-panel
+>

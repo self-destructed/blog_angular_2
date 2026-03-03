@@ -1,60 +1,11 @@
 <p-accordion
   [multiple]="true"
-  [value]="0"
   [pt]="{
     root: {
       class: '!bg-primary-500 space-y-4'
     }
   }">
   @for (item of items(); track idx; let idx = $index) {
-    <p-accordion-panel
-      [value]="idx"
-      [pt]="{
-        root: { class: '!rounded-lg !bg-primary-50 !border-0' }
-      }">
-      <p-accordion-header
-        [pt]="{
-          root: {
-            class:
-              '!rounded-lg !py-4 !ps-4 !pe-8 !bg-primary-50 data-[p-active=true]:!bg-primary-100'
-          }
-        }">
-        <h3
-          class="font-noto-sans text-left text-base leading-6 font-medium tracking-normal text-shark capitalize">
-          {{ item.question }}
-        </h3>
-
-        <ng-template #toggleicon let-active="active">
-          <span class="text-3xl leading-5 text-persian-green">{{
-            active ? '&minus;' : '&plus;'
-          }}</span>
-        </ng-template>
-      </p-accordion-header>
-      <p-accordion-content
-        [pt]="{
-          root: {
-            class: '!bg-primary-50'
-          },
-          content: {
-            class: '!bg-inherit !px-5 !py-4'
-          },
-          contentWrapper: {
-            class: '!bg-inherit'
-          }
-        }">
-        <p
-          class="font-noto-sans text-sm leading-relaxed font-normal tracking-normal text-storm-dust">
-          {{ item.answer }}
-        </p>
-      </p-accordion-content></p-accordion-panel
-    >
+    <app-faq-item [faqItem]="item" [id]="idx.toString()"></app-faq-item>
   }
 </p-accordion>
-
-<ul class="flex flex-col gap-4">
-  @for (item of items(); track item.question) {
-    <li>
-      <app-faq-item [faqItem]="item"></app-faq-item>
-    </li>
-  }
-</ul>
