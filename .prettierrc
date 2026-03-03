@@ -11,6 +11,7 @@
   "endOfLine": "lf",
   "plugins": ["prettier-plugin-tailwindcss"],
   "tailwindStylesheet": "./src/styles.css",
+  "tailwindAttributes": ["[pt]"],
   "overrides": [
     {
       "files": "*.html",
