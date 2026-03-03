@@ -13,5 +13,5 @@ import {
 })
 export class FaqItemComponent {
   public readonly faqItem = input.required<FaqItem>()
-  public readonly id = input<string>()
+  public readonly itemId = input<string>()
 }

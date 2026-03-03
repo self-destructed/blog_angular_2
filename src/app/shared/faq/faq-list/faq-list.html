@@ -5,7 +5,7 @@
       class: 'space-y-4'
     }
   }">
-  @for (item of items(); track idx; let idx = $index) {
-    <app-faq-item [faqItem]="item" [id]="idx.toString()"></app-faq-item>
+  @for (item of items(); track $index; let idx = $index) {
+    <app-faq-item [faqItem]="item" [itemId]="idx.toString()"></app-faq-item>
   }
 </p-accordion>
