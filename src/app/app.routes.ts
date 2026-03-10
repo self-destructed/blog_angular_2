@@ -20,7 +20,7 @@ export const routes: Routes = [
   {
     path: 'not-found',
     loadComponent: () =>
-      import('./pages/not-found-[age/not-found-page').then((m) => m.NotFound),
+      import('./pages/not-found-page/not-found-page').then((m) => m.NotFound),
     title: 'Not found'
   },
   {
