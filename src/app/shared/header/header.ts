@@ -46,7 +46,7 @@ export class HeaderComponent implements OnInit {
         label: 'Pages',
         items: [
           { label: 'FAQ', routerLink: '/faq' },
-          { label: '404', routerLink: '/not_found' }
+          { label: '404', routerLink: '/not-found' }
         ]
       }
     ]
