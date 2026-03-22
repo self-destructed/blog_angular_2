@@ -4,7 +4,7 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./pages/home-page/home-page').then((m) => m.Home),
+      import('./pages/home-page/home-page').then((m) => m.HomePageComponent),
     title: 'Home'
   },
   {
@@ -20,7 +20,9 @@ export const routes: Routes = [
   {
     path: 'not-found',
     loadComponent: () =>
-      import('./pages/not-found-page/not-found-page').then((m) => m.NotFound),
+      import('./pages/not-found-page/not-found-page').then(
+        (m) => m.NotFoundPageComponent
+      ),
     title: 'Not found'
   },
   {
