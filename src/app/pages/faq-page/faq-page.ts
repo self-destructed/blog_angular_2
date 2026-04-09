@@ -1,8 +1,8 @@
-import { Component } from '@angular/core'
-import { FaqItem } from '../../core/types/faq-item.type'
+import { Component, inject } from '@angular/core'
+import { FaqService } from '../../core/services/faq.service'
 import { FaqListComponent } from '../../shared/faq/faq-list/faq-list'
 import { RouterLink } from '@angular/router'
-import { faqMockData } from '../../core/constants/faq.const'
+import { toSignal } from '@angular/core/rxjs-interop'
 
 @Component({
   selector: 'app-faq',
@@ -11,5 +11,9 @@ import { faqMockData } from '../../core/constants/faq.const'
   styles: ``
 })
 export class FaqPageComponent {
-  public readonly faqListData: FaqItem[] = faqMockData
+  private faqService = inject(FaqService)
+
+  public readonly faqListData = toSignal(this.faqService.getFaq(), {
+    initialValue: []
+  })
 }
